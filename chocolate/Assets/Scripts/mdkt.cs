@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class ChocoBehavior : MonoBehaviour
+public class mdkt : MonoBehaviour
 {
     // 1
     void OnCollisionEnter(Collision collision)
@@ -12,7 +12,7 @@ public class ChocoBehavior : MonoBehaviour
             // 3
             Destroy(this.transform.gameObject);
             // 4
-            Debug.Log("Tasty!");
+            Debug.Log("You feel rejuvenated!");
         }
     }
 }
