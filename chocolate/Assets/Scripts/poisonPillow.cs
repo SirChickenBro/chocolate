@@ -4,7 +4,13 @@ using UnityEngine;
 public class poisonPillow : MonoBehaviour
 {
     // 1
-    void OnCollisionEnter(Collision collision)
+    public GameBehavior GameManager;
+
+    void start()
+    {
+        GameManager = GameObject.Find("Game Manager").GetComponent<GameBehavior>();
+    }
+        void OnCollisionEnter(Collision collision)
     {
         // 2
         if (collision.gameObject.name == "Player")
@@ -12,7 +18,9 @@ public class poisonPillow : MonoBehaviour
             // 3
             Destroy(this.transform.gameObject);
             // 4
-            Debug.Log("The Evil Pillow has Inflicted You with Poision");
+            Debug.Log("You've encountered the Perilous Pillow of Poison");
+
+            GameManager.HP -= 5;
         }
     }
 }

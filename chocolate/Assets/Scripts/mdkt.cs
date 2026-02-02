@@ -4,6 +4,11 @@ using UnityEngine;
 public class mdkt : MonoBehaviour
 {
     // 1
+    public GameBehavior GameManager;
+    void start()
+    {
+        GameManager = GameObject.Find("Game Manager").GetComponent<GameBehavior>();
+    }
     void OnCollisionEnter(Collision collision)
     {
         // 2
@@ -13,6 +18,8 @@ public class mdkt : MonoBehaviour
             Destroy(this.transform.gameObject);
             // 4
             Debug.Log("You feel rejuvenated!");
+
+            GameManager.HP += 5;
         }
     }
 }
